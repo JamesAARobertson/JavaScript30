@@ -151,7 +151,7 @@
       ];
 
       const transport = data.reduce(function (obj, item) {
-        // set initial count to 0
+        // set initial item count to 0 HELPS WHEN GOING THROUGH OBJECTS AS NOT ALL KEYS MAY BE KNOWN
         if (!obj[item]) {
           obj[item] = 0;
         }
