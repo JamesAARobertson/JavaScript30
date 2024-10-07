@@ -103,10 +103,10 @@
       const oldest = inventors.sort(function (a, b) {
         const personOne = a.passed - a.year;
         const personTwo = b.passed - b.year;
-return personOne > personTwo ? -1 : 1
+        return personOne > personTwo ? -1 : 1;
       });
 
-      console.table(oldest)
+      console.table(oldest);
 
       // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
       // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
@@ -124,12 +124,12 @@ return personOne > personTwo ? -1 : 1
       // 7. sort Exercise
       // Sort the people alphabetically by last name
 
-      const sortByName = people.sort(function(lastPerson, nextPerson) {
-const [aLast, aFirst] = lastPerson.split(", ");
-const [bLast, bFirst] = nextPerson.split(", ");
-return aLast > bLast ? 1 : -1;
-      })
-      console.log(sortByName)
+      const sortByName = people.sort((lastPerson, nextPerson) => {
+        const [aLast, aFirst] = lastPerson.split(", ");
+        const [bLast, bFirst] = nextPerson.split(", ");
+        return aLast > bLast ? 1 : -1;
+      });
+      console.log(sortByName);
 
       // 8. Reduce Exercise
       // Sum up the instances of each of these
@@ -149,6 +149,17 @@ return aLast > bLast ? 1 : -1;
         "car",
         "truck",
       ];
+
+      const transport = data.reduce(function (obj, item) {
+        // set initial count to 0
+        if (!obj[item]) {
+          obj[item] = 0;
+        }
+        obj[item]++;
+        return obj;
+      }, {});
+
+      console.log(transport)
     </script>
   </body>
 </html>
